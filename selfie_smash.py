@@ -102,34 +102,34 @@ def game_loop():
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0 # if the key is unpressed, the selfie stops
 
-    x += x_change #this creates the movement of the selfie by changing the x corresponding to the left or right movement defined above
-    gameDisplay.fill(white)
-    #the following code calls the function 'things' i.e. the obstacles get drawn in the positions defined by thingx thingy, etc.: 
-    things(thing_startx, thing_starty, thing_width, thing_height, obstacle_color)
-
-    thing_starty += thing_speed
-    selfie(x,y)
-    things_dodged(dodged)
-
-    #this is how the system knows if we have hit the object:
-
-    if x > display_width - selfie_width or x < 0:
-        smash()
-
-    # here's where the real fun begins, the following says if you dodge the obstacle, the score will increase by one, and the obstacles will speed up and increase in size by 20% making it more difficult as you score more points
-    if thing_starty > display_height:
-        thing_starty = 0 - thing_height
-        thing_startx = random.randrange(0,display_width)
-        dodged += 1
-        thing_speed += 1
-        thing_width += (dodged * 1.2)
-
-    if y < thing_starty + thing_height:
-        print("y crossover")
-
-        if x > thing_startx and x < thing_startx + thing_width or x + selfie_width > thing_startx and x + selfie_width < thing_startx + thing_width:
-            print("x crossover")
+        x += x_change #this creates the movement of the selfie by changing the x corresponding to the left or right movement defined above
+        gameDisplay.fill(white)
+        #the following code calls the function 'things' i.e. the obstacles get drawn in the positions defined by thingx thingy, etc.: 
+        things(thing_startx, thing_starty, thing_width, thing_height, obstacle_color)
+    
+        thing_starty += thing_speed
+        selfie(x,y)
+        things_dodged(dodged)
+    
+        #this is how the system knows if we have hit the object:
+    
+        if x > display_width - selfie_width or x < 0:
             smash()
+    
+        # here's where the real fun begins, the following says if you dodge the obstacle, the score will increase by one, and the obstacles will speed up and increase in size by 20% making it more difficult as you score more points
+        if thing_starty > display_height:
+            thing_starty = 0 - thing_height
+            thing_startx = random.randrange(0,display_width)
+            dodged += 1
+            thing_speed += 1
+            thing_width += (dodged * 1.2)
+    
+        if y < thing_starty + thing_height:
+            print("y crossover")
+
+            if x > thing_startx and x < thing_startx + thing_width or x + selfie_width > thing_startx and x + selfie_width < thing_startx + thing_width:
+                print("x crossover")
+                smash()
     
     pygame.display.update()
     clock.tick(60)
