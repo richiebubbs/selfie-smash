@@ -59,3 +59,48 @@ def message_display(text):
     gameDisplay.blit(TextSurf, TextRect)
 
 pygame.display.update()
+
+game_loop()
+
+def smash():
+    message_display("You Got Smashed!")
+
+def game_loop():
+    x = (display_width * 0.45)
+    y = (display_height * 0.8)
+
+    x_change = 0
+
+    #here we tell the computer where the objects will start in the game display:
+
+    thing_startx = random.randrange(0, display_width) #the range is between 0 and the max of whatever our display width is
+    thing_starty = -600 # this tells it to always start at the very top of the display
+    thing_speed = 9 # i played around with speed, but anything slower is a bit boring
+    thing_width = 100
+    thing_height = 150
+
+    thingCount = 1
+
+    dodged = 0
+
+    gameExit = False
+
+    while not gameExit:
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit() # this basically quits the game loop if the user closes the game window
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    x_change = -5 #basically, if the user presses the left arrow key, move the selfie 5 pixels to the left
+                if event.key == pygame.K_RIGHT:
+                    x_change = 5 #if the user presses the right arrow key, move the selfie 5 pixels to the right
+            
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                    x_change = 0 # if the key is unpressed, the selfie stops
+
+    x += x_change #this creates the movement of the selfie by changing the x corresponding to the left or right movement defined above
+    gameDisplay.fill(white)
