@@ -21,7 +21,7 @@ selfie_width = 73
 
 # setup the main display:
 # here we use the variables created above instead of hard coding the game display w and h so if we need to change we can do it easily
-gameDisplay = pygame.display.set_mode(display_width,display_height))
+gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption("Selfie Smash!")
 clock = pygame.time.Clock()
 #load the image that the user saved in the main directory:
