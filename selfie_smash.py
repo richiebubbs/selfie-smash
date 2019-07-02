@@ -58,9 +58,9 @@ def message_display(text):
     TexRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
 
-pygame.display.update()
+    pygame.display.update()
 
-game_loop()
+    game_loop()
 
 def smash():
     message_display("You Got Smashed!")
@@ -105,7 +105,7 @@ def game_loop():
     x += x_change #this creates the movement of the selfie by changing the x corresponding to the left or right movement defined above
     gameDisplay.fill(white)
     #the following code calls the function 'things' i.e. the obstacles get drawn in the positions defined by thingx thingy, etc.: 
-    things(thing_startx, thing_starty, thing_width, thing_height, block_color)
+    things(thing_startx, thing_starty, thing_width, thing_height, obstacle_color)
 
     thing_starty += thing_speed
     selfie(x,y)
