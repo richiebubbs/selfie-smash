@@ -11,7 +11,7 @@ pygame.init()
 display_width = 800
 display_height = 600
 
-black = (0,0.0)
+black = (0,0,0)
 white = (255,255,255)
 red = (255,0,0)
 
@@ -35,8 +35,8 @@ SelfieImg = pygame.transform.smoothscale(SelfieImg1, (73,90))
 # for the next section I got a lot of help from https://pythonprogramming.net/game-development-tutorials/ and https://inventwithpython.com/invent4thed/
 # I also played around with fonts here with help from https://stackoverflow.com/questions/38001898/what-fonts-can-i-use-with-pygame-font-font
 def things_dodged(count):
-    font = pygame.font.chalkboardttc(None, 25)
-    text = font.render("Score: " + str(count), True, black)
+    font = pygame.font.SysFont(None, 25)
+    text = font.render("Score: "+str(count), True, black)
     gameDisplay.blit(text, (0,0))
 
 #I experimented with other shapes, but the rectangle is easiest to use as an obstacle.  So I went with that
@@ -53,9 +53,9 @@ def text_objects(text, font):
     return textSurface, textSurface.get_rect()
 
 def message_display(text):
-    largeText = pygame.font.Font("optimattc", 96)
+    largeText = pygame.font.Font("freesansbold.ttf", 96)
     TextSurf, TextRect = text_objects(text, largeText)
-    TexRect.center = ((display_width/2),(display_height/2))
+    TextRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
 
     pygame.display.update()
