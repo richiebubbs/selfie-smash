@@ -32,3 +32,30 @@ SelfieImg1 = pygame.transform.rotate(SelfieImg0, 270)
 # I got help with this step from https://www.pygame.org/docs/ref/transform.html
 SelfieImg = pygame.transform.smoothscale(SelfieImg1, (73,90))
 
+# for the next section I got a lot of help from https://pythonprogramming.net/game-development-tutorials/ and https://inventwithpython.com/invent4thed/
+# I also played around with fonts here with help from https://stackoverflow.com/questions/38001898/what-fonts-can-i-use-with-pygame-font-font
+def things_dodged(count):
+    font = pygame.font.chalkboardttc(None, 25)
+    text = font.render("Score: " + str(count), True, black)
+    gameDisplay.blit(text, (0,0))
+
+#I experimented with other shapes, but the rectangle is easiest to use as an obstacle.  So I went with that
+def things(thingx, thingy, thingw, thingh, color):
+    pygame.draw.rect(gameDisplay, color,[thingx, thingy, thingw, thingh])
+
+#this next bit of code defines the selfie's position
+
+def selfie(x,y):
+    gameDisplay.blit(SelfieImg, (x,y))
+
+def text_objects(text, font):
+    textSurface = font.render(text, True, black)
+    return textSurface, textSurface.get_rect()
+
+def message_display(text):
+    largeText = pygame.font.Font("optimattc", 96)
+    TextSurf, TextRect = text_objects(text, largeText)
+    TexRect.center = ((display_width/2),(display_height/2))
+    gameDisplay.blit(TextSurf, TextRect)
+
+pygame.display.update()
