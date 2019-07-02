@@ -124,15 +124,15 @@ def game_loop():
             thing_speed += 1
             thing_width += (dodged * 1.2)
     
-        if y < thing_starty + thing_height:
+        if y < thing_starty+thing_height:
             print("y crossover")
 
-            if x > thing_startx and x < thing_startx + thing_width or x + selfie_width > thing_startx and x + selfie_width < thing_startx + thing_width:
+            if x > thing_startx and x < thing_startx + thing_width or x+selfie_width > thing_startx and x + selfie_width < thing_startx+thing_width:
                 print("x crossover")
                 smash()
     
-    pygame.display.update()
-    clock.tick(60)
+        pygame.display.update()
+        clock.tick(60)
 
 game_loop()
 pygame.quit()
