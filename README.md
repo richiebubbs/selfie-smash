@@ -49,7 +49,7 @@ You will see the image of the selfie in the bottom of the game display (note: my
 
 Move the image to the left and right with the left and right arrow keys.  Try to avoid getting hit by the obstacles which will fall from the top of the game display.  Be careful, the more obstacles you dodge, the faster they will go and the larger they become!
 
-Keep going until you get smashed.  When you do you will see a message saying "You got Smashed!" and a prompt to play again or quit.
+Keep going until you get smashed.  When you do you will see a message saying "You got Smashed!" and a prompt to play again or quit. (Note: the buttons are a little buggy, you may have to click twice)
 
 # Attributions
 I am new to coding games, so I received a *lot* of help from the internet with this, mostly from this really great site: <br>
