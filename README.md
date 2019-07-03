@@ -2,11 +2,20 @@
 
 This game exists in the following remote repository: https://github.com/richiebubbs/selfie-smash
 
-To begin fork the repository and then clone the repository to your computer's desktop.  You can navigate to the app from the command line as follows:
+To begin, fork the repository and then clone or download the repository to your computer's desktop.  You can navigate to the app from the command line as follows:
 
 ```sh
 cd ~/Desktop/selfie-smash
 ```
+Note: all further instructions assume you are running this app from the repository's root directory...
+
+# Requirements
+
+* Anaconda 3.7
+
+* Python 3.7
+
+* Pip
 
 
 # Set-Up
@@ -30,7 +39,7 @@ To run the game from the command line:
 python selfie-smash
 ```
 
-Please note, the game already has an image you can use to play, but it is more fun if you use your own image.  To do so, take your favorite selfie and save it in the main directory of the repository.  You must call the image "selfie" and it must be in jpg format.  (If I continue to work on this game in the future I would like to find a way to have the user simply save it to the desktop and it could be in any format, but I wasn't able to get there this time around.)
+Please note, the game already has an image you can use to play, but it is more fun if you use your own image.  To do so, take your favorite selfie and save it in the root directory of the repository.  You must call the image "selfie" and it must be in jpg format.  (Future Scope: I would like to find a way to have the user simply save it to the desktop and it could be in any format, but I wasn't able to get there this time around.)
 
 # Playing the Game
 
