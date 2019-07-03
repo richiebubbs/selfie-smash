@@ -68,8 +68,43 @@ def message_display(text):
     
 
 def smash():
-    message_display("You Got Smashed!")
-    game_loop()
+    largeText = pygame.font.Font("freesansbold.ttf", 72)
+    TextSurf, TextRect = text_objects("YOU GOT SMASHED!", largeText)
+    TextRect.center = ((display_width/2),(display_height/2))
+    gameDisplay.blit(TextSurf, TextRect)
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+        button("REPLAY!", 150,450,100,50, green, bright_green, "play" )
+        button("EXIT", 550,450,100,50, red, bright_red, "quit")
+        
+        pygame.display.update()
+        clock.tick(15)
+
+# I got help with the following from the screencast https://youtu.be/P-UuVITG7Vg?list=PLQVvvaa0QuDdLkP8MrOXLe_rKuf6r80KO
+def button(message,x,y,w,h,i,a,action=None):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    #print(click)
+    if x + w > mouse[0] > x and y + h > mouse[1] > y:
+        pygame.draw.rect(gameDisplay, a, (x,y,w,h))
+        if click[0] == 1 and action != None:
+            if action == "play":
+                game_loop()
+            elif action == "quit":
+                pygame.quit()
+                quit()
+    else:    
+        pygame.draw.rect(gameDisplay, i, (x,y,w,h))
+    
+    smallText = pygame.font.Font("freesansbold.ttf", 20)
+    TextSurf, TextRect = text_objects(message, smallText)
+    TextRect.center = ( (x + (w/2)), (y + (h/2)))
+    gameDisplay.blit(TextSurf, TextRect)
+
 def game_intro():
     intro = True
 
@@ -83,16 +118,10 @@ def game_intro():
         TextSurf, TextRect = text_objects("SELFIE SMASH!", largeText)
         TextRect.center = ((display_width/2),(display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
+        
+        button("PLAY!", 150,450,100,50, green, bright_green, "play" )
+        button("EXIT", 550,450,100,50, red, bright_red, "quit")
 
-        mouse = pygame.mouse.get_pos()
-        if 150 + 100 > mouse[0] > 150 and 450 + 50 > mouse[1] > 450:
-            pygame.draw.rect(gameDisplay, bright_green, (150,450,100,50))
-        else:    
-            pygame.draw.rect(gameDisplay, green, (150,450,100,50))
-        if 550 + 100 > mouse [0] > 550 and 450 + 50 > mouse[1] > 450:
-            pygame.draw.rect(gameDisplay, bright_red, (550,450,100,50))
-        else:
-             pygame.draw.rect(gameDisplay, red, (550,450,100,50))
         pygame.display.update()
         clock.tick(15)
 
