@@ -14,8 +14,10 @@ display_height = 600
 black = (0,0,0)
 white = (255,255,255)
 red = (255,0,0)
+green = (0,255,0)
+blue = (0,0,255)
 
-obstacle_color = (43,58,77)
+obstacle_color = (238,130,238) #I went with violet, NYU Pride!
 
 selfie_width = 73
 
@@ -57,13 +59,29 @@ def message_display(text):
     TextSurf, TextRect = text_objects(text, largeText)
     TextRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
-
+    
     pygame.display.update()
-
-    game_loop()
+    #time.sleep(2)
+    
 
 def smash():
     message_display("You Got Smashed!")
+    game_loop()
+def game_intro():
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+        gameDisplay.fill(white)
+        largeText = pygame.font.Font("freesansbold.ttf", 96)
+        TextSurf, TextRect = text_objects("SELFIE SMASH!", largeText)
+        TextRect.center = ((display_width/2),(display_height/2))
+        gameDisplay.blit(TextSurf, TextRect)
+        pygame.display.update()
+        clock.tick(15)
 
 def game_loop():
     x = (display_width * 0.45)
@@ -134,6 +152,8 @@ def game_loop():
         pygame.display.update()
         clock.tick(60)
 
+
+game_intro()
 game_loop()
 pygame.quit()
 quit()
