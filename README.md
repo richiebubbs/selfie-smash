@@ -52,7 +52,7 @@ Move the image to the left and right with the left and right arrow keys.  Try to
 Keep going until you get smashed.  When you do you will see a message saying "You got Smashed!" and a prompt to play again or quit.
 
 # Attributions
-I am new to coding games, so I received a *lot* of help from the internet with this, mostly from this really great site:
+I am new to coding games, so I received a *lot* of help from the internet with this, mostly from this really great site: <br>
 [Python Game Development Tutorial](https://pythonprogramming.net/game-development-tutorials/) <br> and this screencast: 
 [Screencast](https://youtu.be/P-UuVITG7Vg?list=PLQVvvaa0QuDdLkP8MrOXLe_rKuf6r80KO)
 
