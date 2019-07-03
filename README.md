@@ -32,7 +32,7 @@ python selfie-smash
 
 Please note, the game already has an image you can use to play, but it is more fun if you use your own image.  To do so, take your favorite selfie and save it in the main directory of the repository.  You must call the image "selfie" and it must be in jpg format.  (If I continue to work on this game in the future I would like to find a way to have the user simply save it to the desktop and it could be in any format, but I wasn't able to get there this time around.)
 
-#Playing the Game
+# Playing the Game
 
 The game play is very simple.  When you run the app you will get an intro screen in the pygame window that displays the title and has a button for "Play" and a button for "Quit" click the button for "Play" (Hopefully this works, sometimes it took me multiple clicks, but I am still working on debugging that.)
 
