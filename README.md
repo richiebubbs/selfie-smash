@@ -44,7 +44,7 @@ Keep going until you get smashed.  When you do you will see a message saying "Yo
 
 # Attributions
 I am new to coding games, so I received a *lot* of help from the internet with this, mostly from this really great site and screencast:
-[Python Game Development Tutorial](https://pythonprogramming.net/game-development-tutorials/)
+[Python Game Development Tutorial](https://pythonprogramming.net/game-development-tutorials/) <br>
 [Screencast](https://youtu.be/P-UuVITG7Vg?list=PLQVvvaa0QuDdLkP8MrOXLe_rKuf6r80KO)
 
 and also from the following websites:
