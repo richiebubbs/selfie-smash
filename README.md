@@ -57,4 +57,5 @@ and also from the following websites:
 
 [Fonts in pygame](https://stackoverflow.com/questions/38001898/what-fonts-can-i-use-with-pygame-font-font)
 
+[Help from Professor Rosetti!! (thanks!!)](https://github.com/s2t2/a-ppb-python-game)
 
